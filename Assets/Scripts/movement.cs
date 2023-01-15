@@ -31,12 +31,12 @@ public class movement : MonoBehaviour
 
     void processRotation() {
         if(Input.GetKey(KeyCode.A)) {
-            Debug.Log("Rotating Left");
+            //Debug.Log("Rotating Left");
             ApplyRotation(rotationThrust);
             //transform.Rotate(Vector3.forward * rotationThrust * Time.deltaTime);
         }
         else if(Input.GetKey(KeyCode.D)) {
-            Debug.Log("Rotating Right");
+            //Debug.Log("Rotating Right");
             ApplyRotation(-rotationThrust);
             //transform.Rotate(-Vector3.forward * rotationThrust * Time.deltaTime);
         }
