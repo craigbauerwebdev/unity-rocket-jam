@@ -7,6 +7,7 @@ public class movement : MonoBehaviour
     [SerializeField] float mianThrust = 1000f;
     [SerializeField] float rotationThrust = 50f;
     Rigidbody rb;
+   AudioSource audioSource; 
 
     // member var = global in this space
 
@@ -14,6 +15,7 @@ public class movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>(); //get reference to rigidBody
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,9 +25,14 @@ public class movement : MonoBehaviour
     }
 
     void processThrust() {
-        Debug.Log("UP");
+        //Debug.Log("UP");
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * mianThrust * Time.deltaTime); //0, 1, 0 <-same;
+            if(!audioSource.isPlaying) {
+                audioSource.Play();
+            }
+        } else {
+            audioSource.Stop();
         }
     }
 
