@@ -7,7 +7,7 @@ public class movement : MonoBehaviour
     [SerializeField] float mianThrust = 1000f;
     [SerializeField] float rotationThrust = 50f;
     Rigidbody rb;
-   AudioSource audioSource; 
+    AudioSource audioSource; 
 
     // member var = global in this space
 
